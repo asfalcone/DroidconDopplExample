@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.0.3'
+    ext.kotlin_version = '1.0.4'
     repositories {
         mavenCentral()
     }
@@ -16,7 +16,6 @@ apply plugin: 'kotlin-android-extensions'
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
-def conventionid = properties.getProperty('conventionid')
 def baseurl = properties.getProperty('baseurl')
 def releasePassword = properties.getProperty('releasePassword')
 def jwLicenseKey = properties.getProperty('jwLicenseKey')
@@ -101,13 +100,6 @@ android {
     lintOptions {
         abortOnError false
     }
-}
-
-configurations {
-//    compile.exclude module: 'magicthreads'
-    compile.exclude module: 'intellijannotations'
-    compile.exclude module: 'android'
-    compile.exclude module: 'androidbase'
 }
 
 dependencies {

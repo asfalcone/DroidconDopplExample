@@ -83,7 +83,7 @@ This build should take some time. If all works out, you should be in good shape 
 Open the project in Android Studio. Make sure to select the "albany" flavor (this will be merged down to a single flavor soon).
   Run a standard Android build. This should install like any standard android app.
 
-Note: Builds take longer than you might expect. The native gradle build gets run as part of a standard build. Future plans
+Note: Builds take longer than you might expect. The native gradle build gets run as part of a standard build, which will build Objective-C/Swift. Future plans
 for the gradle plugin are to completely separate Android builds and the native j2objc/doppl compilation.
 
 ## Run iOS
