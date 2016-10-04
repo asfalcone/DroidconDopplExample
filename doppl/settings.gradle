@@ -1,2 +1,2 @@
-include ':lib'
-project(":lib").projectDir = new File("../lib")
+include ":$arg1"
+project(":$arg1").projectDir = new File("../$arg1")

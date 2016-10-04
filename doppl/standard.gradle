@@ -1,0 +1,20 @@
+buildscript {
+    repositories {
+        maven {
+            url "http://dopplmaven.s3-website-us-east-1.amazonaws.com/"
+        }
+    }
+    dependencies {
+        classpath 'co.touchlab.doppel:doppelgradle:0.3.2-SNAPSHOT'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url "http://dopplmaven.s3-website-us-east-1.amazonaws.com/"
+        }
+    }
+}
+
+apply plugin: com.github.j2objccontrib.j2objcgradle.J2objcPlugin

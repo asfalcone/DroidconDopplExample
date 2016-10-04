@@ -20,10 +20,8 @@ Doppl is at a very early stage, so setup may be somewhat brittle, but should wor
 1. Install Android Studio
 2. Install Xcode/Cocoapods
 3. Install j2objc runtime (slightly modded version)
-4. Config gradle with doppl maven repo
-5. Verify build works
-6. Run Android
-7. Run iOS
+4. Run Android
+5. Run iOS
 
 ## Install Android Studio
 
@@ -40,17 +38,6 @@ Doppl uses a slightly modified j2objc runtime. This will likely be merged over t
 [j2objc runtime](http://dopplmaven.s3-website-us-east-1.amazonaws.com/dist.zip)
 
 Extract the zip to a directory (avoid spaces in the path if possible).
-
-## Config gradle
-
-Create/edit ~/.gradle/gradle.properties
-
-Add this line:
-
-dopplMavenDeploy=http://dopplmaven.s3-website-us-east-1.amazonaws.com/
-
-Just an FYI, the doppl packages contain compiled object files. They're huge. That's primarily why they're hosted directly on s3.
-Future versions may maintain dependencies differently.
 
 Add the following to ~/.bash_profile
 
@@ -69,6 +56,8 @@ releasePassword=[You make this. Only needed for release builds]
 ```
 
 Be sure to restart your terminal for the variables to take effect
+
+*Note* The doppl gradle packages are huge. They have compiled object code in them. Downloads will take quite some time.
 
 ## Verify build works
 
