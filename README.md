@@ -57,8 +57,6 @@ releasePassword=[You make this. Only needed for release builds]
 
 Be sure to restart your terminal for the variables to take effect
 
-*Note* The doppl gradle packages are huge. They have compiled object code in them. Downloads will take quite some time.
-
 ## Verify build works
 
 ### Android
@@ -70,13 +68,11 @@ Open the project in Android Studio. Make sure to select the "albany" flavor (thi
 
 ### iOS
 
-CD into the doppl directory, and run
+Run this on the command line:
 
-Run the following
+./doppl/doppl.sh lib
 
-./gradlew lib:j2objcXcode
-
-Note: doppl currently needs gradle 2.8. As a temporary solution, we point 2 different gradle project heads at the same lib dir.
+> A few things to note. First, this is built from the j2objc-gradle plugin, which uses the gradle native functionality. It changed after gradle 2.8, so we have a different gradle wrapper in the 'doppl' directory pegged to 2.8. Also, the doppl gradle dependencies have compiled object code in them, which makes them huge. Your first download will take a while, but should then be cached in your ~/.gradle dir, so you can run clean builds without too much trouble.
 
 This will update the Podfile, if necessary, and run 'pod install'.
 
