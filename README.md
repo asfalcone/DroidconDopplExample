@@ -72,27 +72,22 @@ Be sure to restart your terminal for the variables to take effect
 
 ## Verify build works
 
-Run the following in the project directory
-
-./gradlew lib:build
-
-Note: doppl currently needs gradle 2.8. Android Studio will ask if you want to upgrade. Don't.
-
-This build should take some time. If all works out, you should be in good shape for building apps.
-
-## Run Android
+### Android
 
 Open the project in Android Studio. Make sure to select the "albany" flavor (this will be merged down to a single flavor soon).
   Run a standard Android build. This should install like any standard android app.
 
-Note: Builds take longer than you might expect. The native gradle build gets run as part of a standard build, which will build Objective-C/Swift. Future plans
-for the gradle plugin are to completely separate Android builds and the native j2objc/doppl compilation.
+*The hot deploy currently doesn't work, but that has something to do with the code for chrome cast support (not doppl)*.
 
-## Run iOS
+### iOS
+
+CD into the doppl directory, and run
 
 Run the following
 
 ./gradlew lib:j2objcXcode
+
+Note: doppl currently needs gradle 2.8. As a temporary solution, we point 2 different gradle project heads at the same lib dir.
 
 This will update the Podfile, if necessary, and run 'pod install'.
 
